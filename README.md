@@ -1,4 +1,4 @@
-![alt tag](https://github.com/jchristn/inputty/blob/master/assets/icon.png)
+![alt tag](https://github.com/jchristn/Inputty/raw/main/Assets/icon.png)
 
 # Inputty
 
