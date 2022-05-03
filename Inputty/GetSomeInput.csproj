@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.1;netcoreapp3.1;net461;net5.0;net6.0</TargetFrameworks>
-	<Version>1.0.2</Version>
+	<Version>1.0.3</Version>
     <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
     <PackageId>Inputty</PackageId>
     <Authors>Joel Christner</Authors>
@@ -17,7 +17,6 @@
     <PackageReleaseNotes>Initial release</PackageReleaseNotes>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <DocumentationFile>Inputty.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,6 +27,8 @@
   <ItemGroup>
     <None Include="Assets\icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Pack>True</Pack>
+	  <PackagePath>\</PackagePath>
     </None>
     <None Include="Assets\icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
