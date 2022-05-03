@@ -14,6 +14,7 @@
     <RepositoryType>github</RepositoryType>
     <PackageTags>console input prompt question answer</PackageTags>
     <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
