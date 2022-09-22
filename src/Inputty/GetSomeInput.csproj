@@ -7,7 +7,7 @@
     <PackageId>Inputty</PackageId>
     <Authors>Joel Christner</Authors>
     <Product>Inputty</Product>
-    <Description>Inputty is a simple library that helps simplify the process of getting input from the console.</Description>
+    <Description>Inputty simplifies the process of getting input from the console.  Tested on Windows and Ubuntu.</Description>
     <Copyright>(c)2022 Joel Christner</Copyright>
     <PackageProjectUrl>https://github.com/jchristn/Inputty</PackageProjectUrl>
     <PackageIcon>icon.png</PackageIcon>
