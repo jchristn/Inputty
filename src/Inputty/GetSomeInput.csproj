@@ -1,45 +1,45 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.1;netcoreapp3.1;net461;net5.0;net6.0</TargetFrameworks>
-	<Version>1.0.3</Version>
-    <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
-    <PackageId>Inputty</PackageId>
-    <Authors>Joel Christner</Authors>
-    <Product>Inputty</Product>
-    <Description>Inputty simplifies the process of getting input from the console.  Tested on Windows and Ubuntu.</Description>
-    <Copyright>(c)2022 Joel Christner</Copyright>
-    <PackageProjectUrl>https://github.com/jchristn/Inputty</PackageProjectUrl>
-    <PackageIcon>icon.png</PackageIcon>
-    <RepositoryUrl>https://github.com/jchristn/Inputty</RepositoryUrl>
-    <RepositoryType>github</RepositoryType>
-    <PackageTags>console input prompt question answer</PackageTags>
-    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.1;netcoreapp3.1;net461;net5.0;net6.0</TargetFrameworks>
+		<Version>1.0.4</Version>
+		<ApplicationIcon>Assets\icon.ico</ApplicationIcon>
+		<PackageId>Inputty</PackageId>
+		<Authors>Joel Christner</Authors>
+		<Product>Inputty</Product>
+		<Description>Inputty simplifies the process of getting input from the console.  Tested on Windows and Ubuntu.</Description>
+		<Copyright>(c)2022 Joel Christner</Copyright>
+		<PackageProjectUrl>https://github.com/jchristn/Inputty</PackageProjectUrl>
+		<PackageIcon>icon.png</PackageIcon>
+		<RepositoryUrl>https://github.com/jchristn/Inputty</RepositoryUrl>
+		<RepositoryType>github</RepositoryType>
+		<PackageTags>console input prompt question answer</PackageTags>
+		<PackageReleaseNotes>Initial release</PackageReleaseNotes>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Content Include="Assets\icon.ico" />
-	<Content Include="Inputty.xml" />
-  </ItemGroup>
+	<ItemGroup>
+		<Content Include="Assets\icon.ico" />
+		<Content Include="Inputty.xml" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Include="Assets\icon.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <Pack>True</Pack>
-	  <PackagePath>\</PackagePath>
-    </None>
-    <None Include="Assets\icon.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Include="Inputty.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  <Pack>True</Pack>
-	  <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="Assets\icon.ico">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="Assets\icon.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="Inputty.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 
 </Project>
