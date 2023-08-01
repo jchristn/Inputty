@@ -269,5 +269,35 @@ namespace GetSomeInput
                 return ret;
             }
         }
+
+        /// <summary>
+        /// Retrieve a dictionary from the console.
+        /// </summary>
+        /// <typeparam name="TKey">Key type.</typeparam>
+        /// <typeparam name="TValue">Value type.</typeparam>
+        /// <param name="keyQuestion">Question prompt for the key.</param>
+        /// <param name="valQuestion">Question prompt for the value.</param>
+        /// <returns>Dictionary.</returns>
+        public static Dictionary<TKey, TValue> GetDictionary<TKey, TValue>(string keyQuestion, string valQuestion)
+        {
+            Dictionary<TKey, TValue> d = new Dictionary<TKey, TValue>();
+
+            while (true)
+            {
+                string keyStr = GetString(keyQuestion, null, true);
+                if (String.IsNullOrEmpty(keyStr)) break;
+
+                string valStr = GetString(valQuestion, null, true);
+
+                TKey key = (TKey)Convert.ChangeType(keyStr, typeof(TKey));
+
+                TValue val = default(TValue);
+                if (!String.IsNullOrEmpty(valStr)) val = (TValue)Convert.ChangeType(valStr, typeof(TValue));
+
+                d.Add(key, val);
+            }
+
+            return d;
+        }
     }
 }

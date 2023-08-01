@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.1;netcoreapp3.1;net461;net5.0;net6.0</TargetFrameworks>
-		<Version>1.0.4</Version>
+		<TargetFrameworks>netstandard2.1;net461;net6.0;net7.0</TargetFrameworks>
+		<Version>1.0.6</Version>
 		<ApplicationIcon>Assets\icon.ico</ApplicationIcon>
 		<PackageId>Inputty</PackageId>
 		<Authors>Joel Christner</Authors>
 		<Product>Inputty</Product>
 		<Description>Inputty simplifies the process of getting input from the console.  Tested on Windows and Ubuntu.</Description>
-		<Copyright>(c)2022 Joel Christner</Copyright>
+		<Copyright>(c)2023 Joel Christner</Copyright>
 		<PackageProjectUrl>https://github.com/jchristn/Inputty</PackageProjectUrl>
 		<PackageIcon>icon.png</PackageIcon>
 		<RepositoryUrl>https://github.com/jchristn/Inputty</RepositoryUrl>
@@ -17,6 +17,10 @@
 		<PackageReleaseNotes>Initial release</PackageReleaseNotes>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<SignAssembly>True</SignAssembly>
+		<AssemblyOriginatorKeyFile>..\..\Inputty.snk</AssemblyOriginatorKeyFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -25,6 +29,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<None Include="..\..\LICENSE.md">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\..\README.md">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
 		<None Include="Assets\icon.ico">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 			<Pack>True</Pack>
