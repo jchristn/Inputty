@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFrameworks>netstandard2.1;net461;net6.0;net7.0</TargetFrameworks>
-		<Version>1.0.9</Version>
+		<Version>1.0.10</Version>
 		<ApplicationIcon>Assets\icon.ico</ApplicationIcon>
 		<PackageId>Inputty</PackageId>
 		<Authors>Joel Christner</Authors>

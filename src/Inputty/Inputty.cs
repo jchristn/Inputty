@@ -46,7 +46,8 @@
             "MM/dd/yyyy hh:mm tt",
             "MM/dd/yyyy H:mm",
             "MM/dd/yyyy h:mm tt",
-            "MM/dd/yyyy HH:mm:ss"
+            "MM/dd/yyyy HH:mm:ss",
+            "yyyyMMddTHHmmssZ"
         };
 
         #endregion
