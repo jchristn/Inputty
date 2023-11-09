@@ -3,12 +3,56 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.Specialized;
+    using System.Runtime.Serialization;
 
     /// <summary>
     /// Inputty is a helpful library for getting values from the console.
     /// </summary>
     public static class Inputty
     {
+        #region Public-Members
+
+        /// <summary>
+        /// DateTime formats to evaluate when receiving DateTime input.
+        /// </summary>
+        public static List<string> DateTimeFormats
+        {
+            get
+            {
+                return _DateTimeFormats;
+            }
+            set
+            {
+                if (value == null) throw new ArgumentNullException(nameof(DateTimeFormats));
+                if (value.Count < 1) throw new ArgumentException("At least one DateTime format must be supplied.");
+                _DateTimeFormats = value;
+            }
+        }
+
+        #endregion
+
+        #region Private-Members
+
+        private static List<string> _DateTimeFormats = new List<string>
+        {
+            "yyyy-MM-dd HH:mm:ss",
+            "yyyy-MM-ddTHH:mm:ss",
+            "yyyy-MM-ddTHH:mm:ssK",
+            "yyyy-MM-dd HH:mm:ss.ffffff",
+            "yyyy-MM-ddTHH:mm:ss.ffffff",
+            "yyyy-MM-ddTHH:mm:ss.fffffffK",
+            "yyyy-MM-dd",
+            "MM/dd/yyyy HH:mm",
+            "MM/dd/yyyy hh:mm tt",
+            "MM/dd/yyyy H:mm",
+            "MM/dd/yyyy h:mm tt",
+            "MM/dd/yyyy HH:mm:ss"
+        };
+
+        #endregion
+
+        #region Public-Methods
+
         /// <summary>
         /// Retrieve a Boolean value from the console.
         /// </summary>
@@ -326,5 +370,33 @@
 
             return nvc;
         }
+
+        /// <summary>
+        /// Retrieve a DateTime from the console.  The formats specified in DateTimeFormats will be evaluated.
+        /// </summary>
+        /// <param name="question">Question prompt for the DateTime.</param>
+        /// <returns>DateTime.</returns>
+        public static DateTime GetDateTime(string question)
+        {
+            DateTime ret;
+
+            string timestamp = GetString(question, null, false);
+
+            if (DateTime.TryParse(timestamp, out ret)) return ret;
+
+            foreach (string format in _DateTimeFormats)
+            {
+                if (DateTime.TryParseExact(timestamp, format, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out ret))
+                    return ret;
+            }
+
+            throw new FormatException("The specified timestamp could not be parsed from any supplied formats.");
+        }
+
+        #endregion
+
+        #region Private-Methods
+
+        #endregion
     }
 }

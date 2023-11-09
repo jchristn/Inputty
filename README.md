@@ -6,7 +6,7 @@
 
 Inputty is a simple library that helps simplify the process of getting input from the console.  Inputty allows you to define the prompt, specify allowable values, and specify boundary conditions.
 
-## New in v1.0.0
+## New in v1.0.x
 
 - Initial release
 
@@ -32,3 +32,6 @@ Inputty supports a decent range of return types:
 - ```Boolean```
 - ```Decimal```
 - ```Double```
+- ```Dictionary```
+- ```NameValueCollection```
+- ```DateTime```

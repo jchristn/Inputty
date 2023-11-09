@@ -10,8 +10,10 @@
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("");
             string answer1 = Inputty.GetString("What's your name?", null, false);
 
+            Console.WriteLine("");
             int answer2 = Inputty.GetInteger("What's your age?", 42, true, true);
 
             Console.WriteLine("");
@@ -37,6 +39,10 @@
                 string key = nvc.AllKeys[i];
                 Console.WriteLine(key + ": " + nvc.Get(key));
             }
+
+            Console.WriteLine("");
+            DateTime dt = Inputty.GetDateTime("What time is it?");
+            Console.WriteLine("You said: " + dt.ToString());
         }
     }
 }
