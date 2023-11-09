@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFrameworks>netstandard2.1;net461;net6.0;net7.0</TargetFrameworks>
-		<Version>1.0.6</Version>
+		<Version>1.0.7</Version>
 		<ApplicationIcon>Assets\icon.ico</ApplicationIcon>
 		<PackageId>Inputty</PackageId>
 		<Authors>Joel Christner</Authors>
@@ -14,7 +14,7 @@
 		<RepositoryUrl>https://github.com/jchristn/Inputty</RepositoryUrl>
 		<RepositoryType>github</RepositoryType>
 		<PackageTags>console input prompt question answer</PackageTags>
-		<PackageReleaseNotes>Initial release</PackageReleaseNotes>
+		<PackageReleaseNotes>Added support for NameValueCollection.</PackageReleaseNotes>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<SignAssembly>True</SignAssembly>

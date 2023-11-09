@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace GetSomeInput
+﻿namespace GetSomeInput
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.Specialized;
+
     /// <summary>
     /// Inputty is a helpful library for getting values from the console.
     /// </summary>
@@ -298,6 +299,32 @@ namespace GetSomeInput
             }
 
             return d;
+        }
+
+        /// <summary>
+        /// Retrieve a name value collection from the console.
+        /// </summary>
+        /// <param name="keyQuestion">Question prompt for the key.</param>
+        /// <param name="valQuestion">Question prompt for the value.</param>
+        /// <param name="caseInsensitive">Flag indicating if the NameValueCollection should be case insensitive.</param>
+        /// <returns>NameValueCollection.</returns>
+        public static NameValueCollection GetNameValueCollection(string keyQuestion, string valQuestion, bool caseInsensitive = true)
+        {
+            NameValueCollection nvc;
+            if (caseInsensitive) nvc = new NameValueCollection(StringComparer.InvariantCultureIgnoreCase);
+            else nvc = new NameValueCollection();
+
+            while (true)
+            {
+                string key = GetString(keyQuestion, null, true);
+                if (String.IsNullOrEmpty(key)) break;
+
+                string val = GetString(valQuestion, null, true);
+
+                nvc.Add(key, val);
+            }
+
+            return nvc;
         }
     }
 }
