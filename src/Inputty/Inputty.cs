@@ -393,6 +393,29 @@
             throw new FormatException("The specified timestamp could not be parsed from any supplied formats.");
         }
 
+        /// <summary>
+        /// Retrieve a DateTime from the console.  The formats specified in DateTimeFormats will be evaluated.
+        /// </summary>
+        /// <param name="question">Question prompt for the DateTime.</param>
+        /// <param name="defaultAnswer">Default answer.</param>
+        /// <returns>DateTime.</returns>
+        public static DateTime GetDateTime(string question, DateTime defaultAnswer)
+        {
+            DateTime ret;
+
+            string timestamp = GetString(question, defaultAnswer.ToString(), false);
+
+            if (DateTime.TryParse(timestamp, out ret)) return ret;
+
+            foreach (string format in _DateTimeFormats)
+            {
+                if (DateTime.TryParseExact(timestamp, format, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out ret))
+                    return ret;
+            }
+
+            throw new FormatException("The specified timestamp could not be parsed from any supplied formats.");
+        }
+
         #endregion
 
         #region Private-Methods
