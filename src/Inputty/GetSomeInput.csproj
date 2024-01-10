@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.1;net461;net6.0;net7.0</TargetFrameworks>
-		<Version>1.0.10</Version>
+		<TargetFrameworks>netstandard2.1;net462;net48;net6.0;net7.0;net8.0</TargetFrameworks>
+		<Version>1.0.11</Version>
 		<ApplicationIcon>Assets\icon.ico</ApplicationIcon>
 		<PackageId>Inputty</PackageId>
 		<Authors>Joel Christner</Authors>

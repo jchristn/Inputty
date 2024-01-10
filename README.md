@@ -17,8 +17,12 @@ First things first - do you need help or have feedback?  File an issue here or s
 ## It's Super Easy
 ```csharp
 using GetSomeInput;
-string answer1 = Inputty.GetString("What's your name?", null, false);
-int answer2    = Inputty.GetInteger("What's your age?", 42, true, true);
+
+string answer1 = Inputty.GetString("What's your name?", null, false);    
+// question, default answer, allow null
+
+int answer2    = Inputty.GetInteger("What's your age?", 42, true, true); 
+// question, default answer, positive only, allow zero
 ```
 Yep, it's that simple.
 
@@ -35,3 +39,4 @@ Inputty supports a decent range of return types:
 - ```Dictionary```
 - ```NameValueCollection```
 - ```DateTime```
+- ```Guid```

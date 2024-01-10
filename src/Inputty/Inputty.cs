@@ -417,6 +417,18 @@
             throw new FormatException("The specified timestamp could not be parsed from any supplied formats.");
         }
 
+        /// <summary>
+        /// Retrieve a GUID from the console.
+        /// </summary>
+        /// <param name="question">Question.</param>
+        /// <param name="defaultAnswer">Default answer.</param>
+        /// <returns>Guid.</returns>
+        public static Guid GetGuid(string question, Guid defaultAnswer = default(Guid))
+        {
+            string guid = GetString(question, defaultAnswer.ToString(), false);
+            return Guid.Parse(guid);
+        }
+
         #endregion
 
         #region Private-Methods

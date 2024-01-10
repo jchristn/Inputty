@@ -43,6 +43,11 @@
             Console.WriteLine("");
             DateTime dt = Inputty.GetDateTime("What time is it?");
             Console.WriteLine("You said: " + dt.ToString());
+
+            Console.WriteLine("");
+            Guid guid = Inputty.GetGuid("Please provide a GUID:");
+            Console.WriteLine("GUID: " + guid.ToString());
+            Console.WriteLine("");
         }
     }
 }
