@@ -418,6 +418,56 @@
         }
 
         /// <summary>
+        /// Retrieve a nullable DateTime from the console.  The formats specified in DateTimeFormats will be evaluated.
+        /// </summary>
+        /// <param name="question">Question prompt for the DateTime.</param>
+        /// <returns>Nullable DateTime.</returns>
+        public static DateTime? GetNullableDateTime(string question)
+        {
+            DateTime ret;
+
+            string timestamp = GetString(question, null, true);
+
+            if (String.IsNullOrEmpty(timestamp)) return null;
+            if (DateTime.TryParse(timestamp, out ret)) return ret;
+
+            foreach (string format in _DateTimeFormats)
+            {
+                if (DateTime.TryParseExact(timestamp, format, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out ret))
+                    return ret;
+            }
+
+            throw new FormatException("The specified timestamp could not be parsed from any supplied formats.");
+        }
+
+        /// <summary>
+        /// Retrieve a nullable DateTime from the console.  The formats specified in DateTimeFormats will be evaluated.
+        /// </summary>
+        /// <param name="question">Question prompt for the DateTime.</param>
+        /// <param name="defaultAnswer">Default answer.</param>
+        /// <returns>Nullable DateTime.</returns>
+        public static DateTime? GetNullableDateTime(string question, DateTime? defaultAnswer)
+        {
+            DateTime ret;
+
+            string timestamp = GetString(
+                question, 
+                (defaultAnswer == null ? null : defaultAnswer.Value.ToString()), 
+                true);
+
+            if (String.IsNullOrEmpty(timestamp)) return null;
+            if (DateTime.TryParse(timestamp, out ret)) return ret;
+
+            foreach (string format in _DateTimeFormats)
+            {
+                if (DateTime.TryParseExact(timestamp, format, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out ret))
+                    return ret;
+            }
+
+            throw new FormatException("The specified timestamp could not be parsed from any supplied formats.");
+        }
+
+        /// <summary>
         /// Retrieve a GUID from the console.
         /// </summary>
         /// <param name="question">Question.</param>

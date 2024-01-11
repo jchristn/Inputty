@@ -39,4 +39,5 @@ Inputty supports a decent range of return types:
 - ```Dictionary```
 - ```NameValueCollection```
 - ```DateTime```
+- ```DateTime?```
 - ```Guid```

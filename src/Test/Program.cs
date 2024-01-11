@@ -45,6 +45,18 @@
             Console.WriteLine("You said: " + dt.ToString());
 
             Console.WriteLine("");
+            dt = Inputty.GetDateTime("What time is it?", DateTime.UtcNow);
+            Console.WriteLine("You said: " + dt.ToString());
+
+            Console.WriteLine("");
+            DateTime? dtn = Inputty.GetNullableDateTime("What time is it, or null?");
+            Console.WriteLine("You said: " + (dtn == null ? "(null)" : dtn.Value.ToString()));
+
+            Console.WriteLine("");
+            dtn = Inputty.GetNullableDateTime("What time is it, or null?", DateTime.UtcNow);
+            Console.WriteLine("You said: " + (dtn == null ? "(null)" : dtn.Value.ToString()));
+
+            Console.WriteLine("");
             Guid guid = Inputty.GetGuid("Please provide a GUID:");
             Console.WriteLine("GUID: " + guid.ToString());
             Console.WriteLine("");
