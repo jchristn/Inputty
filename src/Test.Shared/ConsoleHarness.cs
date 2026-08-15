@@ -1,4 +1,4 @@
-namespace Inputty.Tests
+namespace Test.Shared
 {
     using System;
     using System.IO;
@@ -7,7 +7,7 @@ namespace Inputty.Tests
     /// Helper that redirects Console.In/Console.Out so that the console-driven
     /// Inputty methods can be exercised deterministically in tests.
     /// </summary>
-    internal static class ConsoleHarness
+    public static class ConsoleHarness
     {
         /// <summary>
         /// Run a function against Inputty while feeding it the supplied console input.
