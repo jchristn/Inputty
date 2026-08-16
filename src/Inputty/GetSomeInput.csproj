@@ -16,6 +16,8 @@
 		<PackageTags>console input prompt question answer</PackageTags>
 		<PackageReleaseNotes>Added support for DateTime.</PackageReleaseNotes>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<IncludeSymbols>True</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<SignAssembly>True</SignAssembly>
 		<AssemblyOriginatorKeyFile>..\..\Inputty.snk</AssemblyOriginatorKeyFile>

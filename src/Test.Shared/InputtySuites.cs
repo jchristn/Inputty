@@ -222,7 +222,10 @@ namespace Test.Shared
                         Check.Equal(2.75m, ConsoleHarness.Run(() => Sut.GetDecimal("Amount?", 1.5m, false, true), "xyz", "2.75"))),
 
                     Case("GetDecimal", "NegativePositiveOnly_Retries", "[-] negative rejected when positiveOnly, then accepts valid", () =>
-                        Check.Equal(4.0m, ConsoleHarness.Run(() => Sut.GetDecimal("Amount?", 1m, true, false), "-2.5", "4.0")))
+                        Check.Equal(4.0m, ConsoleHarness.Run(() => Sut.GetDecimal("Amount?", 1m, true, false), "-2.5", "4.0"))),
+
+                    Case("GetDecimal", "Zero_NotAllowZero_StillReturnsZero", "[-] zero is returned even when allowZero is false (documents actual behavior)", () =>
+                        Check.Equal(0m, ConsoleHarness.Run(() => Sut.GetDecimal("Amount?", 1m, false, false), "0")))
                 });
         }
 
@@ -253,7 +256,13 @@ namespace Test.Shared
                         Check.Equal(4.2, ConsoleHarness.Run(() => Sut.GetDouble("Amount?", 1.0, false, true), "notanumber", "4.2"))),
 
                     Case("GetDouble", "NegativePositiveOnly_Retries", "[-] negative rejected when positiveOnly, then accepts valid", () =>
-                        Check.Equal(4.2, ConsoleHarness.Run(() => Sut.GetDouble("Amount?", 1.0, true, false), "-1.5", "4.2")))
+                        Check.Equal(4.2, ConsoleHarness.Run(() => Sut.GetDouble("Amount?", 1.0, true, false), "-1.5", "4.2"))),
+
+                    Case("GetDouble", "Scientific_Parses", "[+] scientific/exponent notation parses", () =>
+                        Check.Equal(1500.0, ConsoleHarness.Run(() => Sut.GetDouble("Amount?", 1.0, false, true), "1.5e3"))),
+
+                    Case("GetDouble", "Zero_NotAllowZero_StillReturnsZero", "[-] zero is returned even when allowZero is false (documents actual behavior)", () =>
+                        Check.Equal(0.0, ConsoleHarness.Run(() => Sut.GetDouble("Amount?", 1.0, false, false), "0")))
                 });
         }
 
@@ -341,7 +350,13 @@ namespace Test.Shared
                             () => Sut.GetDictionary<string, string>("Key:", "Value:"),
                             "");
                         Check.Empty(d);
-                    })
+                    }),
+
+                    Case("GetDictionary", "DuplicateKey_Throws", "[-] a repeated key throws ArgumentException (Dictionary.Add rejects duplicates)", () =>
+                        Check.Throws<ArgumentException>(() =>
+                            ConsoleHarness.Run(
+                                () => Sut.GetDictionary<string, string>("Key:", "Value:"),
+                                "k1", "v1", "k1", "v2")))
                 });
         }
 
