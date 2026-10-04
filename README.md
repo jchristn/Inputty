@@ -6,9 +6,12 @@
 
 Inputty is a simple library that helps simplify the process of getting input from the console.  Inputty allows you to define the prompt, specify allowable values, and specify boundary conditions.
 
-## New in v1.0.x
+## New in v1.0.14
 
-- Initial release
+- Assembly is no longer strong-name signed
+- Test dependency updates (Touchstone 0.2.0, NUnit 5.0.0, Microsoft.NET.Test.Sdk 18.10.1)
+
+Refer to [CHANGELOG.md](CHANGELOG.md) for previous versions.
 
 ## Help or feedback
 
@@ -41,3 +44,12 @@ Inputty supports a decent range of return types:
 - ```DateTime```
 - ```DateTime?```
 - ```Guid```
+
+## Running Tests
+
+```
+cd src
+dotnet test Test.Xunit/Test.Xunit.csproj
+dotnet test Test.Nunit/Test.Nunit.csproj
+dotnet run --project Test.Automated -f net10.0
+```
