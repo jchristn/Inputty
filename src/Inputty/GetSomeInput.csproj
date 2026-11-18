@@ -2,17 +2,17 @@
 
 	<PropertyGroup>
 		<TargetFrameworks>netstandard2.0;netstandard2.1;net462;net48;net8.0;net10.0</TargetFrameworks>
-		<Version>1.0.14</Version>
+		<Version>1.0.15</Version>
 		<ApplicationIcon>Assets\icon.ico</ApplicationIcon>
 		<PackageId>Inputty</PackageId>
 		<Authors>Joel Christner</Authors>
 		<Product>Inputty</Product>
 		<Description>Inputty simplifies the process of getting input from the console.  Tested on Windows and Ubuntu.</Description>
-		<Copyright>(c)2023 Joel Christner</Copyright>
+		<Copyright>(c)2026 Joel Christner</Copyright>
 		<PackageProjectUrl>https://github.com/jchristn/Inputty</PackageProjectUrl>
 		<PackageIcon>icon.png</PackageIcon>
 		<RepositoryUrl>https://github.com/jchristn/Inputty</RepositoryUrl>
-		<RepositoryType>github</RepositoryType>
+		<RepositoryType>git</RepositoryType>
 		<PackageTags>console input prompt question answer</PackageTags>
 		<PackageReleaseNotes>Assembly is no longer strong-name signed; test dependency updates.</PackageReleaseNotes>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -22,6 +22,9 @@
 		<SignAssembly>False</SignAssembly>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
 	</PropertyGroup>
 
 	<ItemGroup>
